@@ -1,0 +1,249 @@
+
+/* styles.css */
+* {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  box-sizing: border-box;
+}
+/* Eliminar bordes y sombras en el navbar */
+.navbar {
+  box-shadow: none; /* Elimina cualquier sombra */
+  border: none; /* Elimina el borde */
+}
+
+.navbar-nav .nav-link {
+  border: none; /* Elimina bordes en los enlaces */
+}
+
+.navbar-toggler {
+  border: none; /* Elimina el borde del icono del menú en dispositivos móviles */
+  outline: none; /* Elimina el contorno cuando se hace clic */
+}
+
+.navbar-toggler:focus, .navbar-toggler:active {
+  border: none; /* Elimina el borde cuando está enfocado o activo */
+  outline: none; /* Elimina el contorno cuando está enfocado o activo */
+}
+
+.navbar {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.navbar-superior {
+  background-color: #558a7a;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 60px;
+   width: 100%;
+   margin: 0;
+   box-sizing: border-box;
+}
+.carrito {
+  background-color: #c5414b;
+  padding: 10px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 25px;
+  transition: background-color 0.3s;
+  position: relative;
+  cursor: pointer;
+}
+.carrito a {
+  text-decoration: none;
+  color: white;
+  display: flex;
+  justify-content: center; /* Centrado horizontal */
+  align-items: center; /* Centrado vertical */
+  gap: 7px;
+  font-size: 16px;
+}
+#contador-carrito {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: #91cbfa;
+  color: white;
+  font-size: 14px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+}
+.carrito:hover {
+  background-color: #9e353d;
+}
+.navbar-inferior {
+  background-color: #1a2f2d;
+  width: 100%;
+}
+
+.derecha {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-inferior ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+.navbar-inferior li {
+  padding: 16px 20px;
+  margin: 0 80px;
+}
+.navbar-inferior a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 10px 0;
+  font-weight: bold;
+  position: relative;
+}
+
+.navbar-inferior a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background: white;
+  border-radius: 5px;
+  left: 0;
+  bottom: 6px;
+  transform-origin: right;
+  transform: scale(0);
+  transition: transform .5s;
+}
+
+.navbar-inferior a:hover::after {
+  transform-origin: left;
+  transform: scale(1);
+}
+
+.navbar-brand {
+  transition:  color 0.3s ease;
+  color: #ffffff;
+  font-size: 1.6rem;
+  text-decoration: none;
+  font-family: "Lexend Giga", sans-serif !important;
+}
+
+.navbar-brand:hover {
+  color: #d9d3d3;
+}
+
+/*=============Barra de Busqueda==================*/
+.search-container {
+  display: flex;
+  align-items: center;
+  background-color: #eaf1ed; /* Color del fondo del cuadro */
+  border-radius: 10px; /* Bordes redondeados */
+  padding: 5px 10px;
+  width: 300px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    position: relative; /* Asegura que las sugerencias estén contenidas */
+}
+
+.search-input {
+  border: none;
+  outline: none;
+  background: none;
+  flex: 1;
+  font-size: 16px;
+  color: #333;
+}
+
+.search-icon {
+  font-size: 18px;
+  color: #666;
+  cursor: pointer;
+}
+
+.fa-magnifying-glass {
+  color: #888;
+  font-size: 15px;
+  margin-right: 10px;
+}
+
+.search-input::placeholder {
+  color: #888;
+}
+
+/* Asegúrate de que el menú desplegado no empuje el contenido */
+.navbar-collapse {
+  position: absolute;  /* Cambiar a 'absolute' o 'fixed' para evitar que empuje el contenido */
+  top: 100%;  /* Asegurarte de que se ubique justo debajo de la barra de navegación */
+  left: 0;
+  right: 0;
+  background-color: #558a7a; /* Ajusta el fondo si es necesario */
+  z-index: 1000;  /* Asegúrate de que el menú quede por encima del contenido */
+}
+
+.search-input {
+  border: none;
+  outline: none;
+  background: none;
+  flex: 1;
+  font-size: 16px;
+  color: #333;
+}
+
+.suggestions-list {
+  list-style: none;
+  margin: 0;
+  padding: 3px 0;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #eaf1ed; /* Mismo fondo que el contenedor */
+  position: absolute;
+  top: 111%; /* Colocamos la lista justo debajo del input */
+  left: 0;
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  display: none; /* Inicialmente está oculta */
+  font-size: 16px;
+}
+
+.suggestions-list li {
+  padding: 7px 10px;
+  font-size: 16px;
+  cursor: pointer;
+  color: #777;
+}
+
+.suggestions-list li.no-results {
+  color: #777;
+  cursor: default;
+}
+
+@media (max-width: 992px){
+  .navbar-inferior{
+    display: none;
+  }
+
+  .navbar-superior{
+    display: none;
+  }
+
+  .navbar-brand{
+    font-size: 1.2rem !important
+  }
+}
+
+@media (max-width: 393px) {
+  .navbar-brand{
+    font-size: 0.8rem !important
+  }
+}

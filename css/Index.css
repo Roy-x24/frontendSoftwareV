@@ -1,0 +1,485 @@
+/*============= GENERAL==================*/
+
+* {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+/*============= BANNER==================*/
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #558a7a;
+  margin: 30px 60px 0 60px;
+  border-radius: 10px;
+}
+
+/* Contenido de texto */
+.text-content {
+  max-width: 55%;
+}
+
+.text-content h1 {
+  font-size: 3.5rem;
+  color: white;
+  line-height: 1.3;
+  font-weight: 700;
+  font-family: "Syne", sans-serif;
+}
+
+.text-content p {
+  font-size: 1.2rem;
+  color: white;
+  margin-top: 20px;
+  line-height: 1.6;
+  max-width: 55%;
+  font-family: "ABeeZee", sans-serif;
+}
+
+/*============= CONTENEDOR DE LA FIGURA Y IMAGENES==================*/
+.image-container {
+  position: relative;
+  max-width: 45%;
+  display: flex;
+  justify-content: space-evenly;
+  /* align-items: center; */
+}
+
+.main-character {
+  width: 500px; /* Aumenta el ancho para hacer la imagen más grande */
+  height: auto; /* Mantiene las proporciones */
+  z-index: 2;
+  transform-origin: center; /* Mantiene el punto de escala centrado */
+  position: relative; /* Permite mover la imagen */
+}
+
+.floating-image {
+  position: absolute;
+  z-index: 1;
+}
+
+.salad {
+  top: 32%; /* Posición superior de la ensalada */
+  right: 30px; /* Posición derecha de la ensalada */
+  width: 120px;
+  padding: 20px; /* Espacio adicional alrededor de la imagen */
+  background-color: white; /* Fondo blanco */
+  border-radius: 10px;
+  z-index: 3; /* Asegura que esté al frente */
+}
+
+.meat {
+  bottom: 13%; /* Posición inferior de la carne */
+  left: 0; /* Posición izquierda de la carne */
+  width: 110px;
+  padding: 5px 30px; /* Espacio adicional alrededor de la imagen */
+  background-color: white; /* Fondo blanco */
+  border-radius: 10px;
+  z-index: 3; /* Asegura que esté al frente */
+}
+
+/* Contenedor de productos */
+.products-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 97%;
+  margin: 0 auto;
+}
+
+.product-item {
+  width: 200px; /* Ajusta el tamaño del contenedor */
+  height: 200px; /* Ajusta el tamaño del contenedor */
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* Agrega una sombra */
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Evita que las imágenes sobresalgan */
+  position: relative; /* Posición relativa para contener la imagen */
+}
+
+.product-item img {
+  width: 100%;
+  height: auto; /* Ajusta la altura automáticamente respetando el aspecto */
+  max-height: 100%; /* No permite que la imagen supere la altura del contenedor */
+  object-fit: cover; /* Ajusta la imagen dentro del contenedor */
+  transition: transform 0.5s ease; /* Suaviza el efecto de zoom */
+}
+
+.product-item:hover img {
+  transform: scale(1.2); /* Efecto de zoom al pasar el cursor */
+}
+
+.centrar {
+  text-align: center;
+  margin: 50px 0 30px 0;
+}
+.centrar p,
+.centrar p strong {
+  font-size: 2rem;
+  color: #1a2f2d;
+}
+
+/*Metodos de pago*/
+.pago {
+  background-color: #a9bb9c;
+  padding: 20px;
+  margin: 70px 0;
+}
+
+.titulo {
+  font-family: "Inter", sans-serif;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #1a2f2d;
+}
+
+.metodos {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.metodos img {
+  transition: transform 0.3s ease; /* Transición suave */
+}
+.metodos img:hover {
+  transform: scale(1.2); /* Aumenta ligeramente el tamaño */
+}
+
+.metodo1 img {
+  width: 60px; /*ajustar tamaño imagen*/
+  height: 30px;
+  object-fit: contain;
+}
+
+.metodo2 img {
+  width: 60px; /*ajustar tamaño imagen*/
+  height: 30px;
+  object-fit: contain;
+}
+.metodo1 img:nth-child(1),
+.metodo1 img:nth-child(2),
+.metodo2 img:nth-child(4) {
+  width: 80px;
+  height: 50px;
+}
+
+/*============= SECCION DE EMAIL==================*/
+.promotions-section {
+  background-color: #4e8672; /* Fondo verde */
+  padding: 60px 30px;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+  font-family: Arial, sans-serif;
+  margin: 100px 60px 0 60px;
+
+  display: flex;
+}
+.promotions-section-izquierda {
+  width: 60%;
+}
+.promotions-section h3 {
+  font-size: 30px; /* Incrementa el tamaño del título */
+  margin: 0 0 10px; /* Añade más espacio debajo */
+  font-weight: bold;
+  text-align: left; /* Alinea el título a la izquierda */
+  color: white;
+  text-align: center;
+}
+
+.promotions-section p {
+  font-size: 20px; /* Incrementa el tamaño del texto */
+  margin: 0 0 5px; /* Mantiene espacio debajo del párrafo */
+  text-align: left; /* Alinea el párrafo a la izquierda */
+  color: white;
+  text-align: center;
+  font-family: "ABeeZee", sans-serif;
+}
+
+.promotions-section form {
+  display: flex;
+  flex-direction: column; /* Coloca los elementos en columna */
+  align-items: center; /* Alinea todo a la derecha */
+  gap: 15px; /* Espacio entre el input y el botón */
+  width: 40%;
+}
+
+.promotions-section input[type="email"] {
+  padding: 10px;
+  border: 2px solid white; /* Border color por defecto */
+  border-radius: 5px;
+  font-size: 14px;
+  width: 100%; /* Asegura que ocupe el máximo ancho posible */
+  max-width: 300px; /* Limita el ancho máximo */
+  text-align: left; /* Asegura que el texto ingresado esté alineado a la izquierda */
+}
+
+/* Centrar solo el placeholder */
+.promotions-section input[type="email"]::placeholder {
+  text-align: center; /* Centra el texto del placeholder */
+}
+/* Cambiar el color del borde cuando el input está enfocado */
+.promotions-section input[type="email"]:focus {
+  border-color: #91cbfa; /* El color que desees para el borde cuando el input esté enfocado */
+  outline: none; /* Eliminar el borde del contorno por defecto (opcional) */
+}
+
+.promotions-section button {
+  background-color: #c5414b; /* Fondo rojo */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%; /* Asegura que el botón tenga el mismo ancho que el input */
+  max-width: 300px; /* Limita el ancho máximo */
+}
+.promotions-section button:hover {
+  background-color: #9e353d;
+}
+
+/*============= scroll bar==================*/
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: #2a2725;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #726c68;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #605a57;
+}
+
+@media (max-width: 1420px) {
+  /*============= BANNER==================*/
+  .banner {
+    padding: 0 50px;
+  }
+
+  /* Contenido de texto */
+  .text-content {
+    max-width: 55%;
+  }
+
+  .text-content h1 {
+    font-size: 3rem;
+  }
+
+  .text-content p {
+    font-size: 1rem;
+    max-width: 90%;
+  }
+
+  .main-character {
+    width: 450px; /* Aumenta el ancho para hacer la imagen más grande */
+  }
+
+  .salad {
+    width: 90px;
+    padding: 15px; /* Espacio adicional alrededor de la imagen */
+  }
+
+  .meat {
+    width: 100px;
+    padding: 5px 25px; /* Espacio adicional alrededor de la imagen */
+  }
+  .banner {
+    margin: 30px auto;
+    width: 93%;
+  }
+  .promotions-section {
+    width: 93%;
+    margin: 100px auto 0 auto;
+  }
+}
+
+@media (max-width: 920px) {
+  .main-character {
+    width: 300px; /* Aumenta el ancho para hacer la imagen más grande */
+  }
+
+  .text-content h1 {
+    font-size: 2rem;
+  }
+
+  .text-content p {
+    font-size: 0.8rem;
+    max-width: 90%;
+  }
+
+  .salad {
+    width: 40px;
+    padding: 5px; /* Espacio adicional alrededor de la imagen */
+  }
+
+  .meat {
+    width: 50px;
+    padding: 5px 10px; /* Espacio adicional alrededor de la imagen */
+  }
+  .banner {
+    padding: 0 20px;
+  }
+  .centrar p,
+  .centrar p strong {
+    font-size: 1.5rem;
+    color: #1a2f2d;
+  }
+  .promotions-section {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 50px;
+  }
+  .promotions-section-izquierda {
+    width: 100%;
+  }
+  .promotions-section h3 {
+    margin: 0 0 10px; /* Añade más espacio debajo */
+    font-size: 25px; /* Incrementa el tamaño del título */
+  }
+
+  .promotions-section p {
+    margin: 0 0 25px; /* Mantiene espacio debajo del párrafo */
+    font-size: 15px; /* Incrementa el tamaño del texto */
+  }
+
+  .promotions-section form {
+    width: 80%;
+  }
+  .titulo {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 630px) {
+  .promotions-section {
+    padding: 60px 10px;
+  }
+
+  .metodo1 img {
+    width: 40px; /*ajustar tamaño imagen*/
+    height: 20px;
+  }
+
+  .metodo2 img {
+    width: 40px; /*ajustar tamaño imagen*/
+    height: 20px;
+  }
+  .metodo1 img:nth-child(1),
+  .metodo1 img:nth-child(2),
+  .metodo2 img:nth-child(4) {
+    width: 60px;
+    height: 40px;
+  }
+}
+@media (max-width: 393px) {
+  .main-character {
+    width: 200px; /* Aumenta el ancho para hacer la imagen más grande */
+  }
+
+  .text-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .text-content p {
+    max-width: 95%;
+  }
+
+  .salad {
+    width: 40px;
+    padding: 5px; /* Espacio adicional alrededor de la imagen */
+  }
+
+  .meat {
+    width: 50px;
+    padding: 5px 10px; /* Espacio adicional alrededor de la imagen */
+  }
+  .banner {
+    gap: 0;
+    padding: 10px 10px 0 10px;
+    flex-direction: column;
+  }
+  /* Contenido de texto */
+  .text-content {
+    max-width: 100%;
+  }
+
+  /*============= CONTENEDOR DE LA FIGURA Y IMAGENES==================*/
+  .image-container {
+    max-width: 100%;
+  }
+  .centrar p,
+  .centrar p strong {
+    font-size: 1.2rem;
+    color: #1a2f2d;
+  }
+  .promotions-section {
+    padding: 20px 10px;
+  }
+  .product-item {
+    width: 100px; /* Ajusta el tamaño del contenedor */
+    height: 100px; /* Ajusta el tamaño del contenedor */
+  }
+  .promotions-section h3 {
+    font-size: 22px; /* Incrementa el tamaño del título */
+  }
+
+  .promotions-section p {
+    font-size: 14px; /* Incrementa el tamaño del texto */
+  }
+  .promotions-section form {
+    width: 80%;
+  }
+  .promotions-section input[type="email"] {
+    padding: 5px;
+    width: 180px;
+  }
+  .promotions-section button {
+    padding: 5px 10px;
+    width: 180px; /* Asegura que el botón tenga el mismo ancho que el input */
+  }
+  .titulo {
+    font-size: 1.2rem;
+  }
+
+  .metodo1 img {
+    width: 30px; /*ajustar tamaño imagen*/
+    height: 15px;
+  }
+
+  .metodo2 img {
+    width: 30px; /*ajustar tamaño imagen*/
+    height: 15px;
+  }
+  .metodo1 img:nth-child(1),
+  .metodo1 img:nth-child(2),
+  .metodo2 img:nth-child(4) {
+    width: 50px;
+    height: 35px;
+  }
+  .pago {
+    padding: 10px 0 5px 0;
+  }
+}

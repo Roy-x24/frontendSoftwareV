@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/Index.css" />
+    <title>AgroDelis</title>
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="Img/Iconos/Meat-logo.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Syne:wght@400..800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz@0,14..32;1,14..32&display=swap"
+    rel="stylesheet"
+  </head>
+  <script>
+    function actualizarContadorCarrito() {
+      const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+      const contadorCarritoSpan = document.getElementById("contador-carrito");
+
+      if (carrito.length > 0) {
+        const totalProductos = carrito.reduce(
+          (acc, producto) => acc + producto.cantidad,
+          0
+        );
+        contadorCarritoSpan.textContent = totalProductos;
+        contadorCarritoSpan.style.display = "inline-flex";
+      } else {
+        contadorCarritoSpan.style.display = "none";
+      }
+    }
+
+    function cargarNavbar() {
+      fetch("navbar.html")
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Error al cargar navbar " + response.status);
+          }
+          return response.text();
+        })
+        .then((data) => {
+          document.getElementById("navbar-container").innerHTML = data;
+          actualizarContadorCarrito(); // Llamar después de cargar el navbar
+        })
+        .catch((err) => console.error("Error:", err));
+    }
+
+    // Cargar el navbar después de que el DOM esté listo
+    document.addEventListener("DOMContentLoaded", cargarNavbar);
+  </script>
+  <body>
+    <div id="navbar-container"></div>
+
+    <!--Banner Informativo-->
+    <div class="banner">
+      <div class="text-content">
+        <h1>Frescura del <br />campo a tu mesa,<br />con un clic</h1>
+        <p>
+          Mercado virtual de vegetales, frutas y carnes frescas. Disfruta
+          calidad del campo directo a tu mesa con compras fáciles, rápidas y
+          seguras.
+        </p>
+      </div>
+      <div class="image-container">
+        <img
+          src="Img/index/chico.png"
+          alt="Chico con vegetales"
+          class="main-character"
+        />
+        <img
+          src="Img/index/ensalda.png"
+          alt="Ensalada"
+          class="floating-image salad"
+        />
+        <img
+          src="Img/index/carne.png"
+          alt="Carne"
+          class="floating-image meat"
+        />
+      </div>
+    </div>
+    <!-- Sección de Productos Naturales -->
+    <div class="centrar">
+      <p>Productos Naturales <strong>PARA TI</strong></p>
+    </div>
+    <div class="products-container">
+      <a href="Ordenar.html">
+        <div class="product-item">
+          <img src="Img/index/ImagenIndex6.jpg" alt="frescas" />
+        </div>
+      </a>
+
+      <a href="Ordenar.html">
+        <div class="product-item">
+          <img src="Img/index/ImagenIndex7.jpg" alt="frescas" />
+        </div>
+      </a>
+
+      <a href="Ordenar.html">
+        <div class="product-item">
+          <img src="Img/index/ImagenIndex8.jpg" alt="frescas" />
+        </div>
+      </a>
+
+      <a href="Ordenar.html">
+        <div class="product-item">
+          <img src="Img/index/ImagenIndex9.jpg" alt="frescas" />
+        </div>
+      </a>
+
+      <a href="Ordenar.html">
+        <div class="product-item">
+          <img src="Img/index/ImagenIndex10.jpg" alt="frescas" />
+        </div>
+      </a>
+
+      <a href="Ordenar.html">
+        <div class="product-item">
+          <img src="Img/index/Fresa.jpg" alt="frescas" />
+        </div>
+      </a>
+
+      <a href="Ordenar.html">
+        <div class="product-item">
+          <img src="Img/index/kiwi.jpg" alt="frescas" />
+        </div>
+      </a>
+    </div>
+
+    <!--Seccion de metodos de pago-->
+    <div class="pago">
+      <h2 class="titulo">Metodos de Pago</h2>
+      <div class="metodos">
+        <div class="metodo1">
+          <img
+            src="Img/Iconos/MetodosPay/VerificadoVisa.png"
+            alt="VerificadoVisa"
+          />
+          <img
+            src="Img/Iconos/MetodosPay/MasterSegurity.png"
+            alt="MasterSegurity"
+          />
+          <img src="Img/Iconos/MetodosPay/Visa.png" alt="Visa" />
+        </div>
+        <div class="metodo2">
+          <img src="Img/Iconos/MetodosPay/Master.png" alt="MasterCard" />
+          <img
+            src="Img/Iconos/MetodosPay/AmericanExpress.png"
+            alt="AmericanExpress"
+          />
+          <img src="Img/Iconos/MetodosPay/SitemaClave.png" alt="Clave" />
+          <img src="Img/Iconos/MetodosPay/Nequi.png" alt="Nequi" />
+        </div>
+      </div>
+    </div>
+
+    <div class="centrar">
+      <p>Calidad y Sabor en <strong>CADA CORTE</strong></p>
+    </div>
+
+    <!-- Sección de CARNES -->
+    <div class="products-container">
+      <a href="Ordenar.html">
+        <div class="product-item">
+          <img src="Img/index/ImagenIndex1.jpg" alt="carne" />
+        </div>
+      </a>
+
+      <a href="Ordenar.html">
+        <div class="product-item">
+          <img src="Img/index/ImagenIndex2.jpg" alt="carne" />
+        </div>
+      </a>
+
+      <a href="Ordenar.html">
+        <div class="product-item">
+          <img src="Img/index/ImagenIndex3.webp" alt="carne" />
+        </div>
+      </a>
+
+      <a href="Ordenar.html">
+        <div class="product-item">
+          <img src="Img/index/carne1.jpg" alt="carne" />
+        </div>
+      </a>
+
+      <a href="Ordenar.html">
+        <div class="product-item">
+          <img src="Img/index/ImagenIndex5.jpg" alt="carne" />
+        </div>
+      </a>
+
+      <a href="Ordenar.html">
+        <div class="product-item">
+          <img src="Img/index/carne2.avif" alt="carne" />
+        </div>
+      </a>
+
+      <a href="Ordenar.html">
+        <div class="product-item">
+          <img src="Img/index/carne3.jpg" alt="carne" />
+        </div>
+      </a>
+    </div>
+
+    <div class="promotions-section">
+      <div class="promotions-section-izquierda">
+        <h3>¿Quieres recibir ofertas y promociones?</h3>
+        <p>Recibe los mejores descuentos y novedades.</p>
+      </div>
+
+      <form action="https://formsubmit.co/roybarrerapty@gmail.com" method="POST">
+        <input
+          type="email"
+          name="email"
+          placeholder="Déjanos tu correo aquí"
+          required
+          pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}"
+          title="Por favor ingresa un correo electrónico válido (debe contener '@')."
+        />
+        <button type="submit" value="Enviar">Suscribirme -></button>
+      </form>
+    </div>
+
+    <div id="footer-container"></div>
+
+    <script src="javascript/index.js"></script>
+  </body>
+</html>
